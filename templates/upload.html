@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Video Processing</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+</head>
+<body>
+
+<center>
+<!-- start writing below -->
+
+<h1>Video Processing</h1><hr>
+<h2>Select a video file to upload and Convert it into Black & White Video</h2><br>
+<form action="/" method="POST" enctype="multipart/form-data">
+<input type="file" class="btn btn-primary btn-lg" name="file"><br><br>
+    <!--Write input tag to add Submit button-->
+<input type="submit" value="SUBMIT" class="btn btn-primary btn-lg">
+</form>
+    <!--Add h3 tag to display message defined in app.py file after images gets uploaded-->
+<h3>{{message}}</h3>
+    <!--Add <img> tag to display the uploaded image-->
+
+<video autoplay="autoplay" controls="controls" >
+     <source src="{{url_for('display_video',filename=filename)}}" type="video/mp4"> </source> 
+    </video>
+
+<a href="{{url_for('.download_file')}}">download video</a>
+
+
+
+
+
+
+
+
+
+
+
+<!-- end -->
+</center>
+
+</body>
+</html>
+
+
+
+
